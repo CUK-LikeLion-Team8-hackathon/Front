@@ -48,17 +48,7 @@ function Sidebar({ isOpen, setIsOpen }) {
         </li>
 
         <li className="my-8">
-          <Link to="/product">구매하기</Link>
-        </li>
-        <li className="my-8">
-          <Link to="#">정기배송신청하기</Link>
-        </li>
-        <li className="my-8">
-          <Link to="/material">이달의원료</Link>
-        </li>
-
-        <li className="my-8">
-          <Link to="#">EVENT</Link>
+          <Link to="/board">게시물 보기</Link>
         </li>
       </ul>
     </div>

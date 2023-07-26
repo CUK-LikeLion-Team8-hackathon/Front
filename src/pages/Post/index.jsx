@@ -29,23 +29,32 @@ const Post = () => {
 
   return (
     <div className="flex sm:block justify-center items-center h-screen">
-      <div>
-        <h2 className="text-center text-5xl md:text-3xl sm:text-2xl my-10">
-          게시판입니다.
-        </h2>
+      <div className=" my-10">
+        <h2 className="text-5xl md:text-3xl sm:text-2xl">게시판입니다.</h2>
         {loading ? (
-          <p>Loading...</p>
+          <p className="text-gray-600">Loading...</p>
         ) : (
           <div>
-            <ul>
+            <ul className="mt-4">
               {boardList.map((board) => (
-                <li key={board.idx}>
-                  <Link to={`/board/${board.idx}`}>{board.title}</Link>
+                <li key={board.idx} className="mb-2">
+                  <span className="text-left">{board.idx}. </span>
+                  <Link
+                    to={`/board/${board.idx}`}
+                    className="text-blue-500 hover:underline"
+                  >
+                    {board.title}
+                  </Link>
                 </li>
               ))}
             </ul>
-            <div>
-              <button onClick={moveToWrite}>글쓰기</button>
+            <div className="mt-4">
+              <button
+                onClick={moveToWrite}
+                className="px-4 py-2 bg-blue-500 text-white rounded"
+              >
+                글쓰기
+              </button>
             </div>
           </div>
         )}

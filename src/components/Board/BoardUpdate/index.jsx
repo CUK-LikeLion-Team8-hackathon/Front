@@ -43,31 +43,53 @@ const BoardUpdate = () => {
   }, []);
 
   return (
-    <div>
-      <div>
-        <span>제목</span>
-        <input type="text" name="title" value={title} onChange={onChange} />
-      </div>
-      <br />
-      <div>
-        <span>작성자</span>
-        <input type="text" name="createdBy" value={createdBy} readOnly={true} />
-      </div>
-      <br />
-      <div>
-        <span>내용</span>
-        <textarea
-          name="contents"
-          cols="30"
-          rows="10"
-          value={contents}
-          onChange={onChange}
-        ></textarea>
-      </div>
-      <br />
-      <div>
-        <button onClick={updateBoard}>수정</button>
-        <button onClick={backToDetail}>취소</button>
+    <div className="flex sm:block justify-center items-center h-screen">
+      <div className="space-y-4">
+        <div className="flex items-center">
+          <span className="text-gray-800">제목</span>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={onChange}
+            className="ml-2 px-4 py-2 border rounded"
+          />
+        </div>
+        <div className="flex items-center">
+          <span className="text-gray-800">작성자</span>
+          <input
+            type="text"
+            name="createdBy"
+            value={createdBy}
+            readOnly={true}
+            className="ml-2 px-4 py-2 border rounded bg-gray-100"
+          />
+        </div>
+        <div>
+          <span className="text-gray-800">내용</span>
+          <textarea
+            name="contents"
+            cols="30"
+            rows="6"
+            value={contents}
+            onChange={onChange}
+            className="block w-full border rounded px-4 py-2"
+          ></textarea>
+        </div>
+        <div className="flex space-x-4">
+          <button
+            onClick={updateBoard}
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+          >
+            수정
+          </button>
+          <button
+            onClick={backToDetail}
+            className="px-4 py-2 bg-red-500 text-white rounded"
+          >
+            취소
+          </button>
+        </div>
       </div>
     </div>
   );
