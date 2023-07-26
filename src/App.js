@@ -4,10 +4,10 @@ import Layout from "@components/Layout/layout";
 import Home from "@pages/Home";
 import Login from "@pages/Login";
 import Logout from "@pages/Logout";
-import BoardList from "@components/Board/BoardList";
 import BoardDetail from "@components/Board/BoardDetail";
 import BoardWrite from "@components/Board/BoardWrite";
 import BoardUpdate from "@components/Board/BoardUpdate";
+import Post from "@pages/Post";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/board" element={<BoardList />} />
+          <Route path="/board" element={<Post />} />
           <Route path="/board/:idx" element={<BoardDetail />} />
           <Route path="/write" element={<BoardWrite />} />
           <Route path="/update/:idx" element={<BoardUpdate />} />
