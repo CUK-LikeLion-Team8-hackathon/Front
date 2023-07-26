@@ -8,6 +8,8 @@ import BoardDetail from "@components/Board/BoardDetail";
 import BoardWrite from "@components/Board/BoardWrite";
 import BoardUpdate from "@components/Board/BoardUpdate";
 import Post from "@pages/Post";
+import Auth from "@pages/Login/Auth";
+
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
           <Route path="/board/:idx" element={<BoardDetail />} />
           <Route path="/write" element={<BoardWrite />} />
           <Route path="/update/:idx" element={<BoardUpdate />} />
+
+          <Route path="/oauth/kakao/callback" element={<Auth />} />
+
         </Routes>
       </Layout>
     </BrowserRouter>
