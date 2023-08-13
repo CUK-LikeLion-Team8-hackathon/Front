@@ -17,6 +17,11 @@ const WritePostWithDate = () => {
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);
   };
+  const handleCancel = () => {
+    setNewPost("");
+    setSelectedDate("");
+    setIsWriting(false); // 글쓰기 폼 숨김
+  };
 
   const handlePostSubmit = () => {
     if (newPost.trim() !== "") {
@@ -42,7 +47,7 @@ const WritePostWithDate = () => {
           />
         )}
         {isWriting && (
-          <textarea
+          <input
             rows="8"
             className="w-full h-48 p-2 border rounded"
             value={newPost}
@@ -52,12 +57,20 @@ const WritePostWithDate = () => {
           />
         )}
         {isWriting ? (
-          <button
-            className="mt-2 py-1 px-3 bg-[#96A68C] text-white rounded hover:bg-blue-600"
-            onClick={handlePostSubmit}
-          >
-            등록
-          </button>
+          <div className="flex justify-between">
+            <button
+              className="mt-2 py-1 px-3 text-black rounded border border-[#96A68C]  "
+              onClick={handleCancel}
+            >
+              취소
+            </button>
+            <button
+              className="mt-2 py-1 px-3 bg-[#96A68C] text-white rounded"
+              onClick={handlePostSubmit}
+            >
+              등록
+            </button>
+          </div>
         ) : (
           <button
             className="mt-2 py-1 px-3  text-[#96A68C]"
